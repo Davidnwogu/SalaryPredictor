@@ -45,6 +45,7 @@ df['aws_yn'] = df['Job Description'].apply(lambda x: 1 if 'aws' in x.lower() els
 df['excel_yn'] = df['Job Description'].apply(lambda x: 1 if 'excel' in x.lower() else 0)
 df['sql_yn'] = df['Job Description'].apply(lambda x: 1 if 'sql' in x.lower() else 0)
 
+df_out = df.drop(['Unnamed: 0'], axis = 1)
+df_out.to_csv('Salary_data_cleaned.csv', index = False)
 
-if (1 or 5) > 3:
-    print("yes")
+pd.read_csv('Salary_data_cleaned.csv')
